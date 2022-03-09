@@ -14,7 +14,7 @@ final class RepositorySearchCoordinator: NavigationCoordinatable {
     // MARK: - Route
     
     @Root private var start = makeStart
-    @Route(.push) var test = makeTest
+    @Route(.push) var details = makeDetails
     
     // MARK: - Init
     
@@ -38,7 +38,7 @@ final class RepositorySearchCoordinator: NavigationCoordinatable {
             guard let self = self else { return }
             switch action {
             case .repository(let parameters):
-                self.route(to: \.test, parameters)
+                self.route(to: \.details, parameters)
             }
         }
         
@@ -47,7 +47,7 @@ final class RepositorySearchCoordinator: NavigationCoordinatable {
     
     // MARK: - Child Coordinator
     
-    func makeTest(repoName: String) -> TestCoordinator {
-        TestCoordinator(repoName: repoName)
+    func makeDetails(parameters: RepositoryDetailsParameters) -> RepositoryDetailsCoordinator {
+        RepositoryDetailsCoordinator(resolver: resolver, parameters: parameters)
     }
 }

@@ -10,7 +10,4 @@
    <FileRef
       location = "group:Package/GitHubSearchData">
    </FileRef>
-   <FileRef
-      location = "group:Package/NetworkKit">
-   </FileRef>
 </Workspace>

@@ -17,5 +17,5 @@ enum RepositorySearchAction {
 }
 
 enum RepositorySearchExternalAction: Equatable {
-    case repository(String)
+    case repository(RepositoryDetailsParameters)
 }

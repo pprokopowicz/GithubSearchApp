@@ -16,7 +16,7 @@ struct RepositorySearchView<ViewModel: RepositorySearchInterface>: View {
     // MARK: - View
     
     var body: some View {
-        Group {
+        VStack {
             switch viewModel.viewState {
             case .idle:
                 Text("No search results")

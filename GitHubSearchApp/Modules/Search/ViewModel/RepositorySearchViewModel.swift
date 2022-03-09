@@ -14,6 +14,7 @@ final class RepositorySearchViewModel: RepositorySearchInterface {
     private var models: [GitRepoModel]
     private var searchCancellable: AnyCancellable?
     private let actionSubject: ActionSubject?
+    private let fetchDelay: Double
     
     // MARK: - Dependency
     
@@ -22,9 +23,11 @@ final class RepositorySearchViewModel: RepositorySearchInterface {
     // MARK: - Init
     
     init(
+        delay: Double = 0.5,
         actionSubject: ActionSubject?,
         searchUseCase: RepoSearchUseCaseProtocol
     ) {
+        self.fetchDelay = delay
         self.actionSubject = actionSubject
         self.searchUseCase = searchUseCase
         self.models = []
@@ -42,7 +45,7 @@ final class RepositorySearchViewModel: RepositorySearchInterface {
             search(query: searchText)
         case .item(let id):
             guard let repo = models.first(where: { $0.id == id }) else { return }
-            actionSubject?.send(.repository(repo.name))
+            actionSubject?.send(.repository(RepositoryDetailsParameters(name: repo.name, owner: repo.owner.login)))
         }
     }
     
@@ -53,7 +56,7 @@ final class RepositorySearchViewModel: RepositorySearchInterface {
         viewState = .loading
         
         searchCancellable = Just(query)
-            .delay(for: 0.5, scheduler: RunLoop.main)
+            .delay(for: RunLoop.SchedulerTimeType.Stride(fetchDelay), scheduler: RunLoop.main)
             .flatMap(searchUseCase.execute(repoName:))
             .receive(on: RunLoop.main)
             .sink { [weak self] output in
