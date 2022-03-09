@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:GitHubSearchApp.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Package/GitHubSearchDomain">
+   </FileRef>
+   <FileRef
+      location = "group:Package/GitHubSearchData">
+   </FileRef>
+   <FileRef
+      location = "group:Package/NetworkKit">
+   </FileRef>
+</Workspace>
