@@ -9,7 +9,7 @@ final class RepositorySearchCoordinator: NavigationCoordinatable {
     
     private let resolver: Resolver
     private var actionCancellable: AnyCancellable?
-    let stack: NavigationStack<RepositorySearchCoordinator>
+    let stack: Stinsen.NavigationStack<RepositorySearchCoordinator>
     
     // MARK: - Route
     

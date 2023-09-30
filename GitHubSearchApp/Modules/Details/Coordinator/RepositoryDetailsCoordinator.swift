@@ -7,7 +7,7 @@ final class RepositoryDetailsCoordinator: NavigationCoordinatable {
     // MARK: - Property
     
     private let resolver: Resolver
-    let stack: NavigationStack<RepositoryDetailsCoordinator>
+    let stack: Stinsen.NavigationStack<RepositoryDetailsCoordinator>
     
     // MARK: - Route
     
