@@ -15,7 +15,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(name: "NetworkKit", path: "../NetworkKit"),
+        .package(url: "https://github.com/pprokopowicz/NetworkKit.git", from: "0.7.0"),
         .package(url: "https://github.com/Swinject/Swinject.git", from: "2.0.0")
     ],
     targets: [

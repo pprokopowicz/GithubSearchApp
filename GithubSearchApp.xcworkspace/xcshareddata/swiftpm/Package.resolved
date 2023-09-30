@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "NetworkKit",
+        "repositoryURL": "https://github.com/pprokopowicz/NetworkKit.git",
+        "state": {
+          "branch": null,
+          "revision": "6237757a341f2e459cfc63c7085bba2ec69bba05",
+          "version": "0.7.0"
+        }
+      },
+      {
         "package": "Nimble",
         "repositoryURL": "https://github.com/Quick/Nimble",
         "state": {

@@ -7,6 +7,6 @@ public protocol GitRepoContributorsDataProvider {
 
 extension Repository {
     func contributors(repositoryName: String, owner: String) -> AnyPublisher<[GitRepoUserObject], Error> {
-        networkingClient.request(request: GitRepoContributorsRequest(owner: owner, repositoryName: repositoryName))
+        networkingClient.requestPublisher(request: GitRepoContributorsRequest(owner: owner, repositoryName: repositoryName))
     }
 }

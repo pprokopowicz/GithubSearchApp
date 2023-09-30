@@ -7,6 +7,6 @@ public protocol GitRepoInformationDataProvider {
 
 extension Repository {
     func information(repositoryName: String, owner: String) -> AnyPublisher<GitRepoInformationObject, Error> {
-        networkingClient.request(request: GitRepoDetailsRequest(owner: owner, repositoryName: repositoryName))
+        networkingClient.requestPublisher(request: GitRepoDetailsRequest(owner: owner, repositoryName: repositoryName))
     }
 }

@@ -7,6 +7,6 @@ public protocol GitRepoSearchDataProvider {
 
 extension Repository {
     func search(repositoryName: String) -> AnyPublisher<GitRepoSearchObject, Error> {
-        networkingClient.request(request: GitRepoSearchRequest(query: repositoryName))
+        networkingClient.requestPublisher(request: GitRepoSearchRequest(query: repositoryName))
     }
 }

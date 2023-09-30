@@ -7,6 +7,6 @@ public protocol GitRepoTagsDataProvider {
 
 extension Repository {
     func tags(repositoryName: String, owner: String) -> AnyPublisher<[GitRepoTagObject], Error> {
-        networkingClient.request(request: GitRepoTagsRequest(owner: owner, repositoryName: repositoryName))
+        networkingClient.requestPublisher(request: GitRepoTagsRequest(owner: owner, repositoryName: repositoryName))
     }
 }
