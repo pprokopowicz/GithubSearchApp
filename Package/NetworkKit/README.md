@@ -1,3 +1,0 @@
-# NetworkKit
-
-Simple networking library.
